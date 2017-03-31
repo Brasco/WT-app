@@ -7,14 +7,14 @@
     <table class="table table-striped">
       <tr>
         <th ng-click="orderBy = 'id'; orderReversed = !orderReversed">ID</th>
-        <th ng-click="orderBy = 'title'; orderReversed = !orderReversed">Titel</th>
-        <th ng-click="orderBy = 'license'; orderReversed = !orderReversed">Lizenzfrei</th>
+        <th ng-click="orderBy = 'title'; orderReversed = !orderReversed">Title</th>
+        <th ng-click="orderBy = 'license'; orderReversed = !orderReversed">Royalty Free</th>
         <th ng-click="orderBy = 'status'; orderReversed = !orderReversed">Status</th>
-        <th ng-click="orderBy = 'hasImage'; orderReversed = !orderReversed">Bild</th>
-        <th ng-click="orderBy = 'hasNotesPDF'; orderReversed = !orderReversed">Noten</th>
+        <th ng-click="orderBy = 'hasImage'; orderReversed = !orderReversed">Image</th>
+        <th ng-click="orderBy = 'hasNotesPDF'; orderReversed = !orderReversed">Note</th>
         <th ng-click="orderBy = 'hasMidi'; orderReversed = !orderReversed">Midi</th>
         <th ng-click="orderBy = 'copyrightStatusApp'; orderReversed = !orderReversed">&copy; App</th>
-        <th ng-click="orderBy = 'copyrightStatusBook'; orderReversed = !orderReversed">&copy; Buch</th>
+        <th ng-click="orderBy = 'copyrightStatusBook'; orderReversed = !orderReversed">&copy; Book</th>
         <th>&nbsp;</th>
       </tr>
       <tr ng-repeat="song in filtered = (list | filter:search | orderBy : orderBy : orderReversed )" ng-dblclick="editSong(song.id)">
@@ -27,15 +27,15 @@
         <td><yesno state="song.hasMidi"></yesno></td>
         <td><status status="song.copyrightStatusApp"></status></td>
         <td><status status="song.copyrightStatusBook"></status></td>
-        <td><button type="button" class="btn btn-xs btn-success" ng-click="editSong(song.id)">Bearbeiten</button></td>
+        <td><button type="button" class="btn btn-xs btn-success" ng-click="editSong(song.id)">Edit</button></td>
       </tr>
     </table>
     <p class="text-muted">
-      {{filtered.length}} Lieder gefunden |
-      <a href="api/index.php/export/listchords" target="_blank">Alle Akkorde auflisten</a> |
-      <a href="api/index.php/export/index" target="_blank">Index exportieren</a> |
-      <a href="api/index.php/export/html" target="_blank">HTML & Bilder exportieren</a> |
-      <a href="api/index.php/export/zip" target="_blank">Daten als ZIP exportieren</a> |
+      {{filtered.length}} Songs found |
+      <a href="api/index.php/export/listchords" target="_blank">List of all chords</a> |
+      <a href="api/index.php/export/index" target="_blank">Export Index</a> |
+      <a href="api/index.php/export/html" target="_blank">Export HTML & Images</a> |
+      <a href="api/index.php/export/zip" target="_blank">Export data as ZIP</a> |
       <a href="api/index.php/export/indesign.xml" target="_blank">InDesign XML</a>
 
     </p>
