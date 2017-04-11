@@ -8,14 +8,14 @@
               <a href="#/songs/{{prevSongId}}"><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i></button></a>
               <a href="#/songs/{{nextSongId}}"><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-chevron-right"></i></button></a>
               <br><br>
-              <a href="#/songs">&laquo; zurück zur Liste</a>
+              <a href="#/songs">&laquo; back to the list</a>
             </div>
             <div class="col-sm-10">
               <h1>{{song.title}}&nbsp; <status status="song.status" style="font-size: 14px"></status></h1>
             </div>
           </div>
           <div class="form-group">
-            <label for="inputTitle" class="col-sm-3 control-label">Titel</label>
+            <label for="inputTitle" class="col-sm-3 control-label">Title</label>
 
             <div class="col-sm-9">
               <input type="text" ng-model="song.title" class="form-control" id="inputTitle" placeholder="Titel">
@@ -23,12 +23,12 @@
           </div>
 
           <div class="form-group">
-            <label for="alternativeTitles" class="col-sm-3 control-label">Weitere Titel</label>
+            <label for="alternativeTitles" class="col-sm-3 control-label">Subtitle</label>
             <div class="col-sm-9">
               <textarea id="alternativeTitles" class="form-control" rows="2" ng-model="song.alternativeTitles"></textarea>
               <span class="small">
-                Alternative Titel unter denen das Lied aufgelistet wird (Erste Zeile, Refrain etc.). Ein Titel pro Zeile. <br>
-                Erster Buchstabe gross, ansonsten wie Text</span>
+                Alternative titles under which the song is listed (first line, refrain etc.). One title per line. <br>
+                First letter big, otherwise like text</span>
             </div>
           </div>
 
@@ -38,7 +38,7 @@
             <div class="col-sm-9">
               <input type="text" ng-model="song.interpret" class="form-control" id="inputInterpret">
               <span class="small">
-                Bandname oder Künstler, damit in der App danach gesucht werden kann.
+                Band name or artist so you can search for it in the app.
               </span>
             </div>
           </div>
@@ -49,32 +49,32 @@
             <div class="col-sm-9">
               <textarea id="text" class="form-control" rows="15" ng-model="song.text"></textarea>
               <span class="small">
-                Moll-Akkorde in deutscher Notation (z.B. "Hm" und nicht "h")<br>
-                Strophen nicht nummerieren<br>
-                Ref. (ohne Doppelpunkt) wird immer wiederholt (nicht nur Wort «Ref.», sondern gesamter Text)
+                Minor chords in German notation (e.g., "Hm" and not "h")<br />
+                 Stanzas do not number<br />
+                 Ref (without colon) is always repeated (not only word "Ref.", But complete text)
               </span>
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9">
-              <button type="submit" class="btn btn-success" ng-click="save()">Speichern <i ng-show="showSavedIcon" class="glyphicon glyphicon-ok-sign"></i></button>
+              <button type="submit" class="btn btn-success" ng-click="save()">Save <i ng-show="showSavedIcon" class="glyphicon glyphicon-ok-sign"></i></button>
             </div>
           </div>
 
           <div class="form-group">
-            <label for="inputTitle" class="col-sm-3 control-label">Seitenzahlen</label>
+            <label for="inputTitle" class="col-sm-3 control-label">numeber of pages</label>
 
             <div class="col-sm-2">
-              <span class="label label-danger">Rot</span>
+              <span class="label label-danger">Red</span>
               <input type="text" ng-model="song.pageRondoRed" class="form-control" placeholder="Seitenzahl">
             </div>
             <div class="col-sm-2">
-              <span class="label label-primary">Blau</span>
+              <span class="label label-primary">Blue</span>
               <input type="text" ng-model="song.pageRondoBlue" class="form-control" placeholder="Seitenzahl">
             </div>
             <div class="col-sm-2">
-              <span class="label label-success" style="background: #99FF99;">Grün</span>
+              <span class="label label-success" style="background: #99FF99;">Green</span>
               <input type="text" ng-model="song.pageRondoGreen" class="form-control" placeholder="Seitenzahl">
             </div>
           </div>
@@ -85,16 +85,16 @@
 
             <div class="col-sm-9">
               <select ng-model="song.status" id="status">
-                <option value="NEW">Neu</option>
-                <option value="INPROGRESS">In Arbeit</option>
-                <option value="DONE">Fertig</option>
+                <option value="NEW">New</option>
+                <option value="INPROGRESS">In Progress</option>
+                <option value="DONE">Done</option>
               </select>
               <status status="song.status"></status>
             </div>
           </div>
 
           <div class="form-group">
-            <label for="comments" class="col-sm-3 control-label">Kommentar zum Status</label>
+            <label for="comments" class="col-sm-3 control-label">Comments on Status</label>
 
             <div class="col-sm-9">
               <textarea id="comments" class="form-control" rows="4" ng-model="song.comments"></textarea>
@@ -124,13 +124,13 @@
           </div>
 
           <div class="form-group">
-            <label for="license" class="col-sm-3 control-label">Lizenz</label>
+            <label for="license" class="col-sm-3 control-label">License</label>
 
             <div class="col-sm-9">
               <select ng-model="song.license" id="license">
-                <option value="UNKNOWN">Unbekannt</option>
-                <option value="LICENSED">Lizenziert</option>
-                <option value="FREE">Frei</option>
+                <option value="UNKNOWN">Unknown</option>
+                <option value="LICENSED">Licensed</option>
+                <option value="FREE">Free</option>
               </select>
               <license license="song.license"></license>
             </div>
@@ -140,13 +140,13 @@
 
 
             <div class="form-group" ng-if="song.license == 'LICENSED'">
-              <label for="license" class="col-sm-3 control-label">Lizenz-Typ</label>
+              <label for="license" class="col-sm-3 control-label">License Type</label>
 
               <div class="col-sm-9">
                 <select ng-model="song.license_type" id="license-type">
-                  <option value="UNKNOWN">Unbekannt</option>
-                  <option value="ONE_TIME">Einmalig</option>
-                  <option value="ANNUAL">Jährlich</option>
+                  <option value="UNKNOWN">Unknown</option>
+                  <option value="ONE_TIME">one time</option>
+                  <option value="ANNUAL">annual</option>
                 </select>
                 <licensetype license="song.license_type"></licensetype>
               </div>
@@ -154,7 +154,7 @@
 
 
             <div class="form-group">
-              <label for="copyrightInfo" class="col-sm-3 control-label">Copyright Text (App & Buch)</label>
+              <label for="copyrightInfo" class="col-sm-3 control-label">Text Copyright (App & Book)</label>
 
               <div class="col-sm-9">
                 <textarea id="copyrightInfo" class="form-control" rows="3" ng-model="song.copyrightInfo"></textarea>
@@ -162,7 +162,7 @@
             </div>
 
             <div class="form-group">
-              <label for="copyrightContact" class="col-sm-3 control-label">Halter / Kontakt</label>
+              <label for="copyrightContact" class="col-sm-3 control-label">Author / Contact</label>
 
               <div class="col-sm-9">
                 <textarea id="copyrightContact" class="form-control" rows="5" ng-model="song.copyrightContact"></textarea>
@@ -170,28 +170,28 @@
             </div>
 
             <div class="form-group">
-              <label for="copyrightStatusApp" class="col-sm-3 control-label">Copyright Status App</label>
+              <label for="copyrightStatusApp" class="col-sm-3 control-label">App Copyright Status</label>
 
               <div class="col-sm-9">
                 <select ng-model="song.copyrightStatusApp" id="copyrightStatusApp">
-                  <option value="NEW">Neu</option>
-                  <option value="INPROGRESS">In Arbeit</option>
-                  <option value="DONE">Fertig</option>
-                  <option value="NO_LICENSE">Fertig, keine Lizenz erhalten</option>
+                  <option value="NEW">New</option>
+                  <option value="INPROGRESS">In Progress</option>
+                  <option value="DONE">Done</option>
+                  <option value="NO_LICENSE">No License</option>
                 </select>
                 <status status="song.copyrightStatusApp"></status>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="copyrightStatusBook" class="col-sm-3 control-label">Copyright Status Buch</label>
+              <label for="copyrightStatusBook" class="col-sm-3 control-label">Book Copyright Status</label>
 
               <div class="col-sm-9">
                 <select ng-model="song.copyrightStatusBook" id="copyrightStatusBook">
-                  <option value="NEW">Neu</option>
-                  <option value="INPROGRESS">In Arbeit</option>
-                  <option value="DONE">Fertig</option>
-                  <option value="NO_LICENSE">Fertig, keine Lizenz erhalten</option>
+                  <option value="NEW">New</option>
+                  <option value="INPROGRESS">In Progress</option>
+                  <option value="DONE">Done</option>
+                  <option value="NO_LICENSE">No License</option>
                 </select>
                 <status status="song.copyrightStatusBook"></status>
               </div>
@@ -200,8 +200,8 @@
 
           <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9">
-              <button type="submit" class="btn btn-success" ng-click="save()">Speichern <i ng-show="showSavedIcon" class="glyphicon glyphicon-ok-sign"></i></button>
-              <button type="submit" class="btn btn-default" ng-click="showList()">&laquo; zur Liste</button>
+              <button type="submit" class="btn btn-success" ng-click="save()">Save <i ng-show="showSavedIcon" class="glyphicon glyphicon-ok-sign"></i></button>
+              <button type="submit" class="btn btn-default" ng-click="showList()">&laquo; Show List</button>
             </div>
           </div>
         </form>
@@ -227,11 +227,11 @@
         <br>
         <br>
 
-        <h4>Dateien hochladen</h4>
+        <h4>Upload Files</h4>
 
         <form>
           <div class="form-group">
-            <label for="inputImage" class="control-label">Titelbild</label>
+            <label for="inputImage" class="control-label">Title image</label>
             1242 x 660 px<br>
             <input type="file" name="file" id="inputImage" onchange="angular.element(this).scope().uploadFile(this.files, 'rawImage')"/>
             <div ng-if="song.rawImageSize > 0">
@@ -239,18 +239,18 @@
               <i class="glyphicon glyphicon-ok-sign" style="color: green;"></i> <a href="api/index.php/songs/{{song.id}}/raw/rawImage.png" target="_blank">Download</a>
               {{song.rawImageSize / 1048576 | number : 2}} MB
             </div>
-            <div ng-if="song.rawImageSize == 0" class="text-muted"><br><i class="glyphicon glyphicon-remove-sign" style="color: red;"></i> Keine Datei hochgeladen</div>
+            <div ng-if="song.rawImageSize == 0" class="text-muted"><br><i class="glyphicon glyphicon-remove-sign" style="color: red;"></i> Do not upload file</div>
           </div>
 
           <div class="form-group">
-            <label for="sibeliusFile" class="control-label">Sibelius Datei</label>
+            <label for="sibeliusFile" class="control-label">Sibelius file</label>
             <input type="file" name="file" id="sibeliusFile" onchange="angular.element(this).scope().uploadFile(this.files, 'rawSIB')"/>
             <div ng-if="song.rawSIBSize > 0">
               <br>
               <i class="glyphicon glyphicon-ok-sign" style="color: green;"></i> <a href="api/index.php/songs/{{song.id}}/raw/rawSIB.sib" target="_blank">Download</a>
               {{song.rawSIBSize / 1048576 | number : 2}} MB
             </div>
-            <div ng-if="song.rawSIBSize == 0" class="text-muted"><br><i class="glyphicon glyphicon-remove-sign" style="color: red;"></i> Keine Datei hochgeladen</div>
+            <div ng-if="song.rawSIBSize == 0" class="text-muted"><br><i class="glyphicon glyphicon-remove-sign" style="color: red;"></i>Do not upload file</div>
           </div>
 
           <div class="form-group">
@@ -261,29 +261,29 @@
               <i class="glyphicon glyphicon-ok-sign" style="color: green;"></i> <a href="api/index.php/songs/{{song.id}}/raw/rawNotesPDF.pdf" target="_blank">Download</a>
               {{song.rawNotesPDFSize / 1048576 | number : 2}} MB
             </div>
-            <div ng-if="song.rawNotesPDFSize == 0" class="text-muted"><br><i class="glyphicon glyphicon-remove-sign" style="color: red;"></i> Keine Datei hochgeladen</div>
+            <div ng-if="song.rawNotesPDFSize == 0" class="text-muted"><br><i class="glyphicon glyphicon-remove-sign" style="color: red;"></i>Do not upload file</div>
           </div>
 
           <div class="form-group">
-            <label for="midiFile" class="control-label">Midi Datei</label>
+            <label for="midiFile" class="control-label">Midi file</label>
             <input type="file" name="file" id="midiFile" onchange="angular.element(this).scope().uploadFile(this.files, 'rawMidi')"/>
             <div ng-if="song.rawMidiSize > 0">
               <br>
               <i class="glyphicon glyphicon-ok-sign" style="color: green;"></i> <a href="api/index.php/songs/{{song.id}}/raw/rawMidi.mid" target="_blank">Download</a>
               {{song.rawMidiSize / 1048576 | number : 2}} MB
             </div>
-            <div ng-if="song.rawMidiSize == 0" class="text-muted"><br><i class="glyphicon glyphicon-remove-sign" style="color: red;"></i> Keine Datei hochgeladen</div>
+            <div ng-if="song.rawMidiSize == 0" class="text-muted"><br><i class="glyphicon glyphicon-remove-sign" style="color: red;"></i> Do not upload file</div>
           </div>
 
           <div class="form-group">
-            <label for="copyrightFile" class="control-label">Copyright Vertrag</label>
+            <label for="copyrightFile" class="control-label">Copyright Contact</label>
             <input type="file" name="file" id="copyrightFile" onchange="angular.element(this).scope().uploadFile(this.files, 'rawCopyrightPDF')"/>
             <div ng-if="song.rawCopyrightPDFSize > 0">
               <br>
               <i class="glyphicon glyphicon-ok-sign" style="color: green;"></i> <a href="api/index.php/songs/{{song.id}}/raw/rawCopyrightPDF.pdf" target="_blank">Download</a>
               {{song.rawCopyrightPDFSize / 1048576 | number : 2}} MB
             </div>
-            <div ng-if="song.rawCopyrightPDFSize == 0" class="text-muted"><br><i class="glyphicon glyphicon-remove-sign" style="color: red;"></i> Keine Datei hochgeladen</div>
+            <div ng-if="song.rawCopyrightPDFSize == 0" class="text-muted"><br><i class="glyphicon glyphicon-remove-sign" style="color: red;"></i> Do not upload file</div>
           </div>
         </form>
 
