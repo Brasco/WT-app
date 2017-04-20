@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="ch.rondo.songbookapp" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Rondo</name>
+    <name>WT-songbook</name>
     <description>
-      Rondo Singbuch App
+      song book
   </description>
-    <author email="demian.holderegger@gmail.com" href="http://rondo-verlag.ch/">
-      Rondo Verlag
+    <author email="" href="">
+      WT-songbook
   </author>
     <content src="index.html" />
     <preference name="webviewbounce" value="false" />
@@ -83,4 +83,5 @@
     <plugin name="cordova-plugin-screen-orientation" spec="~1.4.0" />
     <plugin name="cordova-plugin-queries-schemes" spec="~0.1.1" />
     <plugin name="cordova-plugin-midi-player" spec="https://github.com/demianh/MidiFilePlayer.git" />
+    <plugin name="cordova-plugin-media" spec="~2.4.0" />
 </widget>

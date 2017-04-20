@@ -15,18 +15,14 @@
         <div class="songtext">
           <ng-include src="includeFile"></ng-include>
           <br>
-          <div class="report-error-link">
-            &mdash;<br>
-            <browserlink url="mailto:app@rondo-verlag.ch?subject=Feedback zum Lied {{songTitle}} (Rondo App {{app_version}})">Fehler gefunden?</browserlink>
-          </div>
         </div>
       </div>
     </div>
     <div class="tabs-placeholder"></div>
   </ion-content>
 
-  <div class="tabs tabs-light tabs-icon-only">
-      <a class="tab-item" ng-click="startAutoScroll()" ng-if="!scroll">
+  <div class="tabs tabs-calm tabs-icon-only">
+      <a class="tab-item" ng-click="startAutoScroll()" ng-if="!scroll" color="red" >
         <i class="icon rondo-icon-play"></i>
       </a>
       <a class="tab-item" ng-click="stopAutoScroll()" ng-if="scroll">

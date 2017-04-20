@@ -114,12 +114,12 @@
     content: "\e905";
 }
 .rondo-icon-logo:before {
-    content: "\e906";
+    content: "\e90a";
 }
 .rondo-icon-arrow:before {
     content: "\e907";
 }
 .rondo-icon-search:before {
+    /*content: "\e908";*/
     content: "\e908";
 }
-

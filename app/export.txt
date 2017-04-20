@@ -1,3 +1,0 @@
-export ANDROID_HOME="/home/andrea/Android/Sdk/"
-export PATH="$PATH:/home/andrea/Android/Sdk/tools/" 
-

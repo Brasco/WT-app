@@ -21,8 +21,8 @@
   font-style: italic;
   src: url("fonts/Vectora/VectoraLTStd-Italic.otf") format("opentype"); }
 body {
-  color: #ffffff;
-  background: #000000;
+  color: #000000;
+  background: #AECCE6;
   font-family: Vectora, "Helvetica Neue", Verdana, sans-serif;
   letter-spacing: 1px; }
 
@@ -351,7 +351,7 @@ ion-content .page-numbers {
   color: #555 !important; }
 
 .rondo-bar-search label {
-  background: #4A4A4A;
+  background: #72b0e5;
   border: 0; }
   .rondo-bar-search label .placeholder-icon {
     color: #CCC;
@@ -364,7 +364,7 @@ ion-content .page-numbers {
   .rondo-bar-search label input::-webkit-input-placeholder {
     color: #CCC; }
 .rondo-bar-search .clear-search {
-  color: #CCC;
+  color: #000;
   font-size: 140%;
   position: absolute;
   top: 7px;
@@ -389,6 +389,8 @@ ion-content .page-numbers {
     padding: 8px 16px; }
 .rondo-list .main-title {
   font-weight: bold;
+  color: "black";
+  background: "white";
   letter-spacing: 2px; }
 .rondo-list .alt-title {
   letter-spacing: 1px; }

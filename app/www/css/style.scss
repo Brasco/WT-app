@@ -42,8 +42,8 @@
 
 // Some Basic Theme overrides
 body {
-  color: #ffffff;
-  background: #000000;
+  color: #000000;
+  background: #AECCE6;
   font-family: Vectora, "Helvetica Neue", Verdana, sans-serif;
   letter-spacing: 1px;
 }
@@ -344,7 +344,7 @@ ion-content .page-numbers {
 // Song List & Search
 .rondo-bar-search {
   label {
-    background: #4A4A4A;
+    background: #72b0e5;
     border: 0;
 
     .placeholder-icon {
@@ -366,7 +366,7 @@ ion-content .page-numbers {
   }
 
   .clear-search {
-    color: #CCC;
+    color: #000;
     font-size: 140%;
     position: absolute;
     top: 7px;
@@ -402,6 +402,8 @@ ion-content .page-numbers {
 
   .main-title {
     font-weight: bold;
+    color: "black";
+    background: "white";
     letter-spacing: 2px;
   }
 
