@@ -2,7 +2,7 @@
   <div ng-controller="SongListCtrl">
     <h1>WT songbook</h1>
     <div class="form-group">
-      <input type="text" class="form-control" ng-model="search" placeholder="Suchen...">
+      <input type="text" class="form-control" ng-model="search" placeholder="Search...">
     </div>
     <table class="table table-striped">
       <tr>
@@ -30,6 +30,7 @@
         <td><button type="button" class="btn btn-xs btn-success" ng-click="editSong(song.id)">Edit</button></td>
       </tr>
     </table>
+	<button type="button" class="btn btn-xs btn-success" ng-click="newSong(song.id)">Add</button>
     <p class="text-muted">
       {{filtered.length}} Songs found |
       <a href="api/index.php/export/listchords" target="_blank">List of all chords</a> |
