@@ -404,4 +404,44 @@ $app->get('/export/zip', function () use ($app, &$DB) {
 	$zip->finish();
 });
 
+// export apk
+$app->get('/export/apk', function () use ($app, &$DB) {
+	umask(0);
+	$path = '/home/bitnami/WT-app/app/www/resources/songs/';
+
+	$songIds = $DB->fetchAll("SELECT id FROM songs
+		WHERE license = 'FREE'
+		AND status = 'DONE'");
+
+	foreach($songIds as $songId){
+		$song = new Song($songId['id']);
+
+		// generate html
+		$html = $song->getHtml(true);
+		$filepath = $path.'html/'.$songId['id'].'.html';
+		file_put_contents($filepath, $html);
+		chmod($filepath, 0777);
+
+		// generate image
+		$data = $song->getData();
+		if ($data['rawImage']){
+			// convert to gif
+			ob_start();
+			imagegif(imagecreatefromstring($data['rawImage']));
+			$image = ob_get_clean();
+			$imagepath = $path.'images/'.$songId['id'].'.gif';
+			file_put_contents($imagepath, $image);
+			chmod($imagepath, 0777);
+		}
+	}
+	system("/home/bitnami/WT-app/compile.sh");
+	echo count($songIds)." Songs exported.";
+});
+
+// export deploy
+$app->get('/export/deploy', function () use ($app, &$DB) {
+	umask(0);
+	system("/home/bitnami/WT-app/release.sh");
+	echo count($songIds)." Songs exported.";
+});
 $app->run();
